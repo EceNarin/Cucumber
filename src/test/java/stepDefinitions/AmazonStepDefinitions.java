@@ -61,6 +61,7 @@ public class AmazonStepDefinitions {
         Driver.getDriver().get(ConfigReader.getProperty(expectedUrl));
     }
 
+
     @Then("kullanici {int} sn bekler")
     public void kullaniciSnBekler(int expectedSc) {
         try {
