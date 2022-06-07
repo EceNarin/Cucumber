@@ -13,7 +13,6 @@ public class AutomationExercise {
         public AutomationExercise() {
             PageFactory.initElements(Driver.getDriver(), this);
         }
-
         @FindBy(xpath = "//*[@id=\"slider-carousel\"]/div/div[1]/div[1]/h1")
         public WebElement homePage;
         @FindBy(xpath = "(//a[@href=\"/test_cases\"])[1]")
@@ -31,6 +30,8 @@ public class AutomationExercise {
         public WebElement viewButtonCart;
         //(//a[@href="/view_cart"])[2]
         //(//a[@href="/login"])[1]
+        @FindBy
+        public WebElement topMenu;
         @FindBy(xpath = "(//a[@href=\"/login\"])[1]")
         public WebElement signInSignUp;
         @FindBy(xpath = "//a[@data-product-id=\"1\"]")
@@ -52,6 +53,10 @@ public class AutomationExercise {
         @FindBy
         public WebElement productDetailsByIndex;
 
+
+        public WebElement choiceFromTopMenu(String string){
+                return topMenu=Driver.getDriver().findElement(By.xpath("//a[@href=\"/"+string+"\"]"));
+        }
         public WebElement choiceProductChartByIndex(int x) {
 
             return productByIndex = Driver.getDriver().findElement(By.xpath("(//a[@data-product-id=\"" + x + "\"])[1]"));

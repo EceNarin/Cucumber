@@ -14,3 +14,4 @@ Feature: US1005 verification automation exercise
     And Verify that product is removed from the cart
     And kullanici 4 sn bekler
     And sayfayi kapatir
+
