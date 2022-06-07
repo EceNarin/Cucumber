@@ -10,9 +10,12 @@ import org.openqa.selenium.interactions.Actions;
 import pages.AutomationExercise;
 import utilities.Driver;
 
+import java.util.Random;
+
 public class AEStepDefinitions {
     AutomationExercise ae=new AutomationExercise();
     Actions actions=new Actions(Driver.getDriver());
+
     @Then("Verify that home page is visible successfully")
     public void verify_that_home_page_is_visible_successfully() {
         Assert.assertTrue(ae.homePage.isDisplayed());
@@ -89,29 +92,42 @@ public class AEStepDefinitions {
 
     @And("Verify that Brands are visible on left side bar")
     public void verifyThatBrandsAreVisibleOnLeftSideBar() {
-
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        WebElement brand=Driver.getDriver().findElement(By.xpath("//div[@class=\"brands_products\"]/h2"));
+        Assert.assertTrue(brand.isDisplayed());
     }
 
     @And("Click on any brand name")
     public void clickOnAnyBrandName() {
+        int size=Driver.getDriver().findElements(By.xpath("//div[@class=\"brands-name\"]//ul//li")).size();
+      Driver.getDriver().findElement(By.xpath("//div[@class=\"brands-name\"]//ul//li["+new Random().nextInt(size)+"]")).click();
 
     }
 
     @And("Verify that user is navigated to brand page and brand products are displayed")
     public void verifyThatUserIsNavigatedToBrandPageAndBrandProductsAreDisplayed() {
-
+      Assert.assertTrue(ae.titleText.isDisplayed());
     }
 
     @And("On left side bar, click on any other brand link")
     public void onLeftSideBarClickOnAnyOtherBrandLink() {
+        int size=Driver.getDriver().findElements(By.xpath("//div[@class=\"brands-name\"]//ul//li")).size();
+        Driver.getDriver().findElement(By.xpath("//div[@class=\"brands-name\"]//ul//li["+new Random().nextInt(size)+"]")).click();
+
 
     }
 
     @And("Verify that user is navigated to that brand page and can see products")
     public void verifyThatUserIsNavigatedToThatBrandPageAndCanSeeProducts() {
+      boolean proVerify=  Driver.getDriver().findElement(By.xpath("//a[@href=\"/products\"]")).isDisplayed();
+      Assert.assertTrue(proVerify);
+      Assert.assertTrue(ae.titleText.getText().startsWith("BRAND"));
     }
 
+
     @Then("Click on {string} button")
-    public void clickOnProductsButton() {
+    public void clickOnButton(String topMenu) {
+
+        ae.choiceFromTopMenu(topMenu.toLowerCase()).click();
     }
 }

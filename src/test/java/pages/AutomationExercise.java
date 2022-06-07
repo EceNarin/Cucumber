@@ -17,8 +17,6 @@ public class AutomationExercise {
         public WebElement homePage;
         @FindBy(xpath = "(//a[@href=\"/test_cases\"])[1]")
         public WebElement testCaseButton;
-        @FindBy(xpath = "//h2[@class=\"title text-center\"]")
-        public WebElement visibleTestText;
         @FindBy(xpath = "//a[@href=\"/products\"]")
         public WebElement productButton;
         //u can change change by number
@@ -30,6 +28,8 @@ public class AutomationExercise {
         public WebElement viewButtonCart;
         //(//a[@href="/view_cart"])[2]
         //(//a[@href="/login"])[1]
+        @FindBy (xpath = "//h2[@class=\"title text-center\"]")
+        public WebElement titleText;
         @FindBy
         public WebElement topMenu;
         @FindBy(xpath = "(//a[@href=\"/login\"])[1]")
