@@ -28,6 +28,8 @@ public class AutomationExercise {
         public WebElement viewButtonCart;
         //(//a[@href="/view_cart"])[2]
         //(//a[@href="/login"])[1]
+        @FindBy (xpath = "//input[@id=\"search_product\"]")
+        public WebElement search;
         @FindBy (xpath = "//h2[@class=\"title text-center\"]")
         public WebElement titleText;
         @FindBy
@@ -52,7 +54,10 @@ public class AutomationExercise {
         public WebElement productByIndex;
         @FindBy
         public WebElement productDetailsByIndex;
-
+        @FindBy(xpath = "//input[@data-qa=\"login-email\"]")
+        public WebElement userMail;
+        @FindBy(xpath = "//input[@data-qa=\"login-password\"]")
+        public WebElement userPassword;
 
         public WebElement choiceFromTopMenu(String string){
                 return topMenu=Driver.getDriver().findElement(By.xpath("//a[@href=\"/"+string+"\"]"));
