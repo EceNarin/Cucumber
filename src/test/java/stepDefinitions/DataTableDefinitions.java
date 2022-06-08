@@ -3,6 +3,8 @@ package stepDefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -11,6 +13,10 @@ import pages.DataTable;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
 
 public class DataTableDefinitions {
@@ -67,11 +73,13 @@ public class DataTableDefinitions {
 
     @And("{string} sutunundaki tum degerleri yazdirir")
     public void sutunundakiTumDegerleriYazdirir(String arg0) {
+
         List<WebElement> listHead=Driver.getDriver().findElements(By.xpath("//thead//tr//th"));
         int size=listHead.size();
         for(int i=1;i<=size;i++){
             if(arg0.equals(Driver.getDriver().findElement(By.xpath("//thead//tr//th["+i+"]")).getText())){
                 Driver.getDriver().findElements(By.xpath("//thead//tr//th["+i+"]")).stream().forEach(t-> System.out.println(t.getText()));
+               String word= Driver.getDriver().findElements(By.xpath("//thead//tr//th["+i+"]")).stream().findAny().get().getText();
             }
         }
     }

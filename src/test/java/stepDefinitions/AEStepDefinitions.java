@@ -10,6 +10,7 @@ import org.openqa.selenium.interactions.Actions;
 import pages.AutomationExercise;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 import java.util.List;
 import java.util.Random;
@@ -195,4 +196,29 @@ public class AEStepDefinitions {
     }
 
 
+    @Then("Scroll to bottom of page")
+    public void scrollToBottomOfPage() {
+        actions.sendKeys(Keys.END).perform();
+    }
+
+    @And("Verify RECOMMENDED ITEMS are visible")
+    public void verifyRECOMMENDEDITEMSAreVisible() {
+        Assert.assertTrue(Driver.getDriver().findElement(By.xpath("//div[@class=\"recommended_items\"]")).isDisplayed());
+    }
+
+    @And("Click on Add To Cart on Recommended product")
+    public void clickOnAddToCartOnRecommendedProduct() {
+        ReusableMethods.waitForClickablility(Driver.getDriver().findElement(By.xpath("//*[@id=\"recommended-item-carousel\"]/div/div[2]/div[2]/div/div/div/a")),10 );
+        Driver.getDriver().findElement(By.xpath("//*[@id=\"recommended-item-carousel\"]/div/div[2]/div[2]/div/div/div/a")).click();
+    }
+
+    @And("Click on View Cart button")
+    public void clickOnViewCartButton() {
+        Driver.getDriver().findElement(By.xpath("(//a[@href=\"/view_cart\"])[2]")).click();
+    }
+
+    @And("Verify that product is displayed in cart page")
+    public void verifyThatProductIsDisplayedInCartPage() {
+        Assert.assertTrue(Driver.getDriver().findElement(By.xpath("//tbody//tr")).isDisplayed());
+    }
 }
