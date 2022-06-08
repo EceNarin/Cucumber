@@ -6,7 +6,13 @@
 6. Verify that user is navigated to brand page and brand products are displayed
 7. On left side bar, click on any other brand link
 8. Verify that user is navigated to that brand page and can see products
-
+ Yeni bir test methodu olusturalim
+ https://the-internet.herokuapp.com/add_remove_elements/ adresine gidin
+ 1) “Add Element” butona basin
+ 2) “Delete” butonu gorunur oluncaya kadar bekleyin
+ 3) “Delete” butonunun gorunur oldugunu test edin
+ 4) Delete butonuna basarak butonu silin
+ 5) Delete butonunun gorunmedigini test edin
 
 Examples:
       |fname|lname|positions|office|extension|startDate|salary|
