@@ -1,10 +1,17 @@
 package stepDefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import pages.DataTable;
+import utilities.Driver;
+import utilities.ReusableMethods;
+
+import java.util.List;
 
 public class DataTableDefinitions {
     DataTable dt=new DataTable();
@@ -56,5 +63,16 @@ public class DataTableDefinitions {
     public void isimBolumundeIsmininOldugunuDogrular(String arg0) {
         String actualWord=dt.verifyName.getText();
         Assert.assertTrue(actualWord.contains(arg0));
+    }
+
+    @And("{string} sutunundaki tum degerleri yazdirir")
+    public void sutunundakiTumDegerleriYazdirir(String arg0) {
+        List<WebElement> listHead=Driver.getDriver().findElements(By.xpath("//thead//tr//th"));
+        int size=listHead.size();
+        for(int i=1;i<=size;i++){
+            if(arg0.equals(Driver.getDriver().findElement(By.xpath("//thead//tr//th["+i+"]")).getText())){
+                Driver.getDriver().findElements(By.xpath("//thead//tr//th["+i+"]")).stream().forEach(t-> System.out.println(t.getText()));
+            }
+        }
     }
 }
