@@ -48,4 +48,13 @@ public class HotelMolyStepDefinitions {
         Assert.assertTrue(moly.UnSuccessLogin.isDisplayed());
     }
 
+    @And("user input invalid userNName {string}")
+    public void userInputInvalidUserNName(String name) {
+        moly.username.sendKeys(name);
+    }
+
+    @And("user input invalidy password {string}")
+    public void userInputInvalidyPassword(String password) {
+        moly.password.sendKeys(password);
+    }
 }

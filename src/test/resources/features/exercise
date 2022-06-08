@@ -7,6 +7,15 @@
 7. On left side bar, click on any other brand link
 8. Verify that user is navigated to that brand page and can see products
 
+
+Examples:
+      |fname|lname|positions|office|extension|startDate|salary|
+      |ali  |ddd  |qa       |sweden| UI    |21-06-2022 |2300  |
+      |alim  |dde   |qa       |norway| UI    |25-06-2022 |3500  |
+      |ayse  |dds  |qa       |sweden| -   |23-06-2022 |2900  |
+      |asya  |ddf  |qa       |germany| UI    |26.06.2022 |2800  |
+      |ayla  |ddrt   |qa       |US| -   |27.06.2022 |3900  |
+
 1. Launch browser
 2. Navigate to url 'http://automationexercise.com'
 3. Click on 'Products' button

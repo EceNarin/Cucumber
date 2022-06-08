@@ -75,4 +75,13 @@ public class AmazonStepDefinitions {
     public void urlInIcerdiginiTestEder(String expectedContainsUrl) {
      Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expectedContainsUrl));
     }
+
+    @Then("kullanici kelimeler {string} icin arama yapar")
+    public void kullaniciKelimelerIcinAramaYapar(String SearchingWord) {
+        
+    }
+
+    @And("kullanici  sonuclarin kelimeleri {string} icerdigini test eder")
+    public void kullaniciSonuclarinKelimeleriIcerdiginiTestEder(String ResultTest) {
+    }
 }
