@@ -15,10 +15,10 @@ public class HerOkuApp {
     public WebElement addElementButton;
     @FindBy (xpath = "//button[@onclick=\"deleteElement()\"]")
     public WebElement deleteButton;
-    @FindBy (xpath = "//button[@onclick=\"deleteElement()\"]")
-    public List<WebElement> deleteButtonList;
-    @FindBy
-    public WebElement addElementButton2;
+    //div[@id="elements"]
+
+    @FindBy (xpath = "//div[@id=\"elements\"]//button")
+    public List<WebElement> deletElementsButtonList;
     @FindBy
     public WebElement addElementButton3;
 
