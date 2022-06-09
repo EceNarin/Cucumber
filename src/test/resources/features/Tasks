@@ -1,4 +1,4 @@
-/*
+/*ELIFFF
    go to url : https://en.wikipedia.org/wiki/Dell
    go to table which name is 'List of companies acquired by Dell Inc.'
    print row 4 of the table on console
@@ -12,13 +12,35 @@
     ( 2nd and 3rd ogeler : November 2, Cloud integration leader)
     6. satirin ilk hucresinde Compellent yazisinin goruntulendigini dogrulayin
     */
+CAN33333
+ // http://the-internet.herokuapp.com/add_remove_elements/
+    // click on the "Add Element" button 100 times
+    // write a function that takes a number, and clicks the "Delete" button
+    // given number of times, and then validates that given number of
+    // buttons was deleted
+
+    CAN!!!!111
    // https://www.jqueryscript.net/demo/Easy-iFrame-based-Twitter-Emoji-Picker-Plugin-jQuery-Emoojis/ sitesine gidin
     // web sitesini maximize yapin
     // ikinci emojiye tıklayın
-    // tüm ikinci emoji öğelerini tıklayın
+    // tum ikinci emoji ogelerini tiklayin
     // parent iframe e geri donun
     // formu doldurun,(Formu istediğiniz metinlerle doldurun)
     //  apply button a basin
+
+   CAN222
+//- www.gittigidiyor.com sitesi açılır.
+//- Arama kutucuğuna bilgisayar kelimesi girilir.
+ //- Arama sonuçları sayfasından 2.sayfa açılır.
+ //- 2.sayfanın açıldığı kontrol edilir.
+ //- Sonuca göre sergilenen ürünlerden rastgele bir ürün seçilir.
+  //- Seçilen ürünün ürün bilgisi ve tutar bilgisi txt dosyasına yazılır.
+   //- Seçilen ürün sepete eklenir.
+   //- Ürün sayfasındaki fiyat ile sepette yer alan ürün fiyatının doğruluğu karşılaştırılır.
+    //- Adet arttırılarak ürün adedinin 2 olduğu doğrulanır.
+    //- Ürün sepetten silinerek sepetin boş olduğu kontrol edilir.
+
+
     1. Launch browser
     2. Navigate to url 'http://automationexercise.com'
     3. Verify that home page is visible successfully

@@ -75,11 +75,13 @@ public class DataTableDefinitions {
     public void sutunundakiTumDegerleriYazdirir(String arg0) {
 
         List<WebElement> listHead=Driver.getDriver().findElements(By.xpath("//thead//tr//th"));
+        ReusableMethods.writeToListINTOText(listHead);
         int size=listHead.size();
         for(int i=1;i<=size;i++){
             if(arg0.equals(Driver.getDriver().findElement(By.xpath("//thead//tr//th["+i+"]")).getText())){
                 Driver.getDriver().findElements(By.xpath("//thead//tr//th["+i+"]")).stream().forEach(t-> System.out.println(t.getText()));
                String word= Driver.getDriver().findElements(By.xpath("//thead//tr//th["+i+"]")).stream().findAny().get().getText();
+               ReusableMethods.writeToOneStringToText(word);
             }
         }
     }

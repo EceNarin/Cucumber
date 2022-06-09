@@ -10,8 +10,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -64,6 +67,42 @@ public class ReusableMethods {
             }
             return elemTexts;
         }
+        //=================Writing List text on text====================///////
+        public static void writeToListINTOText(List<WebElement>list){
+            LocalDateTime date=LocalDateTime.now();
+            DateTimeFormatter dtf= DateTimeFormatter.ofPattern("YYMMddHHmmss");
+            String dates = date.format(dtf);
+            File file=new File("src/test/resources"+dates+".txt");
+            try {
+                FileUtils.writeStringToFile(file,list.stream().findAny().toString(), Charset.defaultCharset());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    //=================Writing  onewebelemt text on text====================///////
+    public static void writeToOneElementToText(WebElement we){
+        LocalDateTime date=LocalDateTime.now();
+        DateTimeFormatter dtf= DateTimeFormatter.ofPattern("YYMMddHHmmss");
+        String dates = date.format(dtf);
+        File file=new File("src/test/resources"+dates+".txt");
+        try {
+            FileUtils.writeStringToFile(file,we.getText(), Charset.defaultCharset());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    //=================Writing  String text on text====================///////
+    public static void writeToOneStringToText(String str){
+        LocalDateTime date=LocalDateTime.now();
+        DateTimeFormatter dtf= DateTimeFormatter.ofPattern("YYMMddHHmmss");
+        String dates = date.format(dtf);
+        File file=new File("src/test/resources"+dates+".txt");
+        try {
+            FileUtils.writeStringToFile(file,str, Charset.defaultCharset());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
         //========Returns the Text of the element given an element locator==//
         public static List<String> getElementsText(By locator) {
             List<WebElement> elems = Driver.getDriver().findElements(locator);
