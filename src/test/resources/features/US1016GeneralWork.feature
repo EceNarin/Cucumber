@@ -1,5 +1,5 @@
 Feature: 1013 General Task
-  @work4
+  @Remove
   Scenario: Add/Remove elements
     Given kullanici "okuUrl" anasayfasinda
         Then Add Element  butona basin

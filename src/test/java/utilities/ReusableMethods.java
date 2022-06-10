@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
@@ -73,11 +74,31 @@ public class ReusableMethods {
             DateTimeFormatter dtf= DateTimeFormatter.ofPattern("YYMMddHHmmss");
             String dates = date.format(dtf);
             File file=new File("src/test/resources"+dates+".txt");
+            FileWriter fw= null;
             try {
-                FileUtils.writeStringToFile(file,list.stream().findAny().toString(), Charset.defaultCharset());
+                fw = new FileWriter(file);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+            try {
+                fw.write(String.valueOf(list.stream().map(WebElement::getText)));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            try {
+                fw.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            /*String str="";
+            for (WebElement w:list) {
+                str="\n"+w.getText();
+            }
+            try {
+                FileUtils.writeStringToFile(file, str, Charset.defaultCharset());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }*/
         }
     //=================Writing  onewebelemt text on text====================///////
     public static void writeToOneElementToText(WebElement we){

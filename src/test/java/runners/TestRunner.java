@@ -1,4 +1,4 @@
-package runner;
+package runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -6,17 +6,21 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions (
+        plugin={"html:target/cucumber-reports.html",
+                "json:target/json-reports/cucumber.json",
+                "junit:target/xml-report/cucumber.xml"
+        },
         features = "src/test/resources/features",
         glue = "stepDefinitions",
-        tags="@wip4",
+        tags="@Text",
         dryRun = false
 
         )
-public class Runner {
-    /*
+public class TestRunner {
+    /* CTRL+ENTER
     Bir frameWork'te tek bir runner class'i yeterli olabilir
-    Runner class'in class bodys'inde hicbir sey olmaz
-    Runner class'imizi onemli yapan 2 tane notation vardir
+    TestRunner class'in class bodys'inde hicbir sey olmaz
+    TestRunner class'imizi onemli yapan 2 tane notation vardir
     @RunWith(Cucumber.class) nostation'u class'imiza calisma ozelligi katar
     Bu notasyon icin cucumber FrameWork'umuzde jUnit'i tercih ediyoruz
      */
