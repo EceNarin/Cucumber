@@ -80,7 +80,7 @@ public class DataTableDefinitions {
         for(int i=1;i<=size;i++){
             if(arg0.equals(Driver.getDriver().findElement(By.xpath("//thead//tr//th["+i+"]")).getText())){
                 Driver.getDriver().findElements(By.xpath("//thead//tr//th["+i+"]")).stream().forEach(t-> System.out.println(t.getText()));
-              Driver.getDriver().findElements(By.xpath("//thead//tr//th["+i+"]")).stream().forEach(t-> System.out.println(t.getText()));
+                Driver.getDriver().findElements(By.xpath("//thead//tr//th["+i+"]")).stream().forEach(t-> System.out.println(t.getText()));
 
             }
         }
