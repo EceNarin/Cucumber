@@ -39,7 +39,7 @@ public class AutomationPracticeDefinitions {
          .sendKeys(Keys.TAB).sendKeys(email).sendKeys(Keys.TAB).sendKeys(password).sendKeys(Keys.TAB).sendKeys("1").sendKeys(Keys.TAB).sendKeys("4")
          .sendKeys(Keys.TAB).sendKeys("1990").sendKeys(Keys.TAB).sendKeys(Keys.ENTER).sendKeys(Keys.TAB).sendKeys(Keys.ENTER)
          .sendKeys(Keys.TAB).sendKeys(fName).sendKeys(Keys.TAB).sendKeys(lName).sendKeys(Keys.TAB).sendKeys(fake.company().name()).sendKeys(Keys.TAB)
-         .sendKeys(fake.address().fullAddress()).sendKeys(Keys.TAB).sendKeys(fake.address().cityName()).sendKeys(Keys.TAB).sendKeys(fake.address().state())
+         .sendKeys(fake.address().fullAddress()).sendKeys(Keys.TAB).sendKeys(fake.address().cityName()).sendKeys(Keys.TAB).sendKeys("Arizona")
          .sendKeys(fake.address().zipCode()).sendKeys(Keys.TAB).sendKeys("United States").sendKeys(fake.lorem().sentence(30)).sendKeys(Keys.TAB)
          .sendKeys(fake.phoneNumber().phoneNumber()).sendKeys(Keys.TAB).sendKeys(fake.phoneNumber().phoneNumber()).sendKeys(Keys.TAB)
          .sendKeys(fake.address().secondaryAddress()).sendKeys(Keys.TAB).perform();

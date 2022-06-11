@@ -1,6 +1,8 @@
 package utilities;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -8,9 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
@@ -37,6 +37,23 @@ public class ReusableMethods {
             FileUtils.copyFile(source, finalDestination);
             return target;
         }
+                    //========ReadExcel=====//
+        public static Workbook readExcel(String filePath){
+            FileInputStream fis;
+            Workbook workbook;
+            try {
+                 fis=new FileInputStream(filePath);
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+            try {
+                 workbook= WorkbookFactory.create(fis);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            return workbook;
+        }
+
         //========Switching Window=====//
         public static void switchToWindow(String targetTitle) {
             String origin = Driver.getDriver().getWindowHandle();
