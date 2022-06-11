@@ -1,0 +1,17 @@
+1- Paralel test tum testlerimizi hep birlikte execute etmek istedigiimizde zamani azaltmak icin
+kullanilir. Paralel testing’de istedigimiz kadar browser’i ayni anda calistirabiliriz
+2- Ilk yapmam gereken paralel calismasini istedigim browser sayisinca runner olusturmak
+3- Runner class’larinin ismi TestRunner icermelidir. Farkli bir isim istiyorsak sureFire
+plugin’inden calistirilacak runner’larin isminde gecen ortak kismi yazmaliyiz
+4- Calistirmak istedigimiz tum testleri paralel calistiracagimiz browser sayisina gore tag’larla
+gruplandiririz.
+5- pom.xml’de dependencies tagi bittikten sonra icice build, plugins taglarini acalim. Plugins
+taglari icinde 2 tane plugin ekleriz
+- failsafe plugini testimiz basarisiz olsa da paralel testing devam ettirir
+- sureFire bu plugin de paralel calistirma ayarlari yapilir
+6- Daha guzel ve gelismis bir rapor almak icin pom.xml’e maven-cucumber-reporting plugini
+eklenir
+7- Plugin’lerin devreye girebilmesi icin, testlerimiz runner class’dan degil, IntelliJ terminal’den
+calistirilmalidir.
+8- Terminal’den runnerlari calistirmak icin mvn clean verify yazmaliyiz
+maven verify and clean is option

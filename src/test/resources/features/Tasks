@@ -12,6 +12,7 @@
     ( 2nd and 3rd ogeler : November 2, Cloud integration leader)
     6. satirin ilk hucresinde Compellent yazisinin goruntulendigini dogrulayin
     */
+    //*[@id="mw-content-text"]/div[1]/table[4]/tbody/tr[6]/td[1]/span    //*[@id="mw-content-text"]/div[1]/table[4]/tbody/tr[6]/td[2]/text()[1]
 CAN33333
  // http://the-internet.herokuapp.com/add_remove_elements/
     // click on the "Add Element" button 100 times
