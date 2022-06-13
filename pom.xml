@@ -98,6 +98,17 @@ Files\Java\jdk1.8.0_251\bin\javac</executable>
                 </executions>
             </plugin>
             <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <fork>true</fork>
+                    <executable>C:\Program
+                        Files\Java\jdk1.8.0_251\bin\javac</executable>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>3.0.0-M1</version>
@@ -128,6 +139,14 @@ Files\Java\jdk1.8.0_251\bin\javac</executable>
                         <include>**/runners/*TestRunner*.java</include>
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
                 </configuration>
             </plugin>
         </plugins>
