@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.interactions.Actions;
 import pages.HerOkuApp;
@@ -94,14 +95,16 @@ public class OkuAppDefinitions {
     }
     @Then("Elemental Selenium ile yeni acilan sekmenin windowhandle degerini yaz")
     public void elemental_selenium_ile_yeni_acilan_sekmenin_windowhandle_degerini_yaz() {
-      /*  app.elementalSelenium.click();
+        app.elementalSelenium.click();
          Set<String> handles=Driver.getDriver().getWindowHandles();
          handles.stream().forEach(t-> System.out.println(t));
         for (String w:handles) {
-            if(!(w.equals(firsHandle) ||w.equals(secondHandle))){
+            if(!(w.equals(firsHandle))){
                 System.out.println("SauceHandle: " + w);
+                secondHandle=w;
+                Driver.getDriver().switchTo().window(secondHandle);
             }
-        }*/
+        }
     }
     @Then("sponsored by Sauce Labs'a tikla")
     public void sponsored_by_sauce_labs_a_tikla() {
@@ -110,11 +113,21 @@ public class OkuAppDefinitions {
     }
     @Then("fareyle contact in uzerine gelip contact support u tikla")
     public void fareyle_contact_in_uzerine_gelip_contact_support_u_tikla() {
-    action.moveToElement(app.contact).click(app.contactSupport).perform();
+        Set<String> handles=Driver.getDriver().getWindowHandles();
+        handles.stream().forEach(t-> System.out.println(t));
+        for (String w:handles) {
+            if(!(w.equals(firsHandle) ||w.equals(secondHandle))){
+                System.out.println("Third: " + w);
+                Driver.getDriver().switchTo().window(w);
+            }
+        }
+        action.moveToElement(app.contact).perform();
+        app.contactSupport.click();
     }
+
     @Then("ilk sayfaya geri gel")
     public void ilk_sayfaya_geri_gel() {
-      Driver.getDriver().switchTo().window(firsHandle);
+      Driver.getDriver().switchTo().window(secondHandle);
     }
 
 

@@ -16,14 +16,18 @@ public class TrivagoPage {
     }
   @FindBy(xpath = "//*[@id=\"__next\"]/div[1]/div[4]/header/div[1]/nav/ul/li")
     public List<WebElement> staysCarsFlightsPackage;
-    @FindBy(xpath = "//*[@id=\"__next\"]/div[1]/main/div[3]/div[2]/div/div[3]/div/div/ul/li")
+    @FindBy(xpath = "//*[@id=\"__next\"]/div[1]/main/div[3]/div[2]/div/div[3]/div/div/ul/li/div")
     public List<WebElement> allHotelHome;
     @FindBy(xpath = "//input[@type=\"search\"]")
     public WebElement searchBox;
-    @FindBy(xpath = "//*[@id=\"__next\"]/div[1]/main/div[3]/div[2]/div/div[3]/div/div/form/fieldset/div/div[1]/button/span/div/span/span[2]")
+    @FindBy(xpath = "(//span[@class=\"flex flex-col text-s text-grey-900\"])[1]")
     public WebElement checkIn;
-    @FindBy(xpath = "//*[@id=\"__next\"]/div[1]/main/div[3]/div[2]/div/div[3]/div/div/form/fieldset/div/div[2]/button/span[1]/div/span/span[2]")
-    public WebElement checkOut;
+    @FindBy(xpath = "//time[@datetime=\"2022-07-21\"]")
+    public WebElement date2;
+    @FindBy(xpath = "//time[@datetime=\"2022-07-07\"]")
+    public WebElement date1;
+    @FindBy(xpath = "//button[@name=\"guest_rating_filters\"]")
+    public WebElement guessRating;
     @FindBy(xpath = "//input[@data-testid=\"adults-amount\"]")
     public WebElement adult;
     @FindBy(xpath = "//*[@id=\"number-input-21\"]")

@@ -33,7 +33,7 @@ public class HerOkuApp {
     public WebElement elementalSelenium;
     @FindBy(xpath = "//a[@href=\"https://saucelabs.com/\"]")
     public WebElement sauceLab;
-    @FindBy(xpath = "(//a[@href=\"/training-support\"])[2]")
+    @FindBy(xpath = "//*[@id=\"headerMainNav\"]/div/nav/ul/li[1]/ul[2]/li[6]/div[2]/div/div/div/ul/li/div/ul/li[2]/div/ul/li[1]/div/ul/li/a/span")
     public WebElement contactSupport;
     @FindBy(xpath = "(//div[@data-hover-content=\"Contact\"])[2]")
     public WebElement contact;

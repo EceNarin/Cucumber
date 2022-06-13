@@ -20,7 +20,7 @@ public class TrivagoStepDefinitions {
         trivagoPage.choices(trivagoPage.staysCarsFlightsPackage,arg0).click();
         secondHandle=ReusableMethods.switchToWindowEce(firstHandle);
         Driver.getDriver().switchTo().window(secondHandle);
-        Assert.assertTrue(!firstHandle.equals(secondHandle));
+        Assert.assertTrue(Driver.getDriver().getWindowHandle().equals(secondHandle));
     }
     @Then("sayfayi en alta gotur ve tekrar basa gel")
     public void sayfayi_en_alta_gotur_ve_tekrar_basa_gel() {
@@ -34,7 +34,8 @@ public class TrivagoStepDefinitions {
     }
     @Then("onceki sekmeye don")
     public void onceki_sekmeye_don() {
-         Driver.getDriver().switchTo().window(secondHandle);
+         Driver.getDriver().close();
+        Driver.getDriver().switchTo().window(firstHandle);
     }
     @And("All stays - Hotel - House  Apartment sekmelerinden {string} sekmesine tikla")
     public void allStaysHotelHouseApartmentSekmelerindenSekmesineTikla(String arg0) {
@@ -42,14 +43,13 @@ public class TrivagoStepDefinitions {
     }
     @And("aramakutusuna {string} yaz")
     public void aramakutusunaYaz(String arg0) {
-       trivagoPage.searchBox.sendKeys(arg0);
+       action.click(trivagoPage.searchBox).sendKeys(arg0).sendKeys(Keys.TAB).sendKeys(Keys.TAB).perform();
     }
-    @Then("{int} yazi icin {int} haftalik tatil sec")
-    public void yazi_icin_haftalik_tatil_sec(Integer int1, Integer int2) {
-        int x=5;
-        trivagoPage.checkIn.sendKeys("0"+x+"/07/"+int1+"");
-        x+=(7*int2);
-        trivagoPage.checkOut.sendKeys(""+x+"/07/"+int1+"");
+    @And("iki haftalik tatil sec")
+    public void ikiHaftalikTatilSec() {
+       trivagoPage.checkIn.click();
+       action.click(trivagoPage.date1).perform();
+       action.click(trivagoPage.date2).perform();
     }
     @Then("{int} yetiskin sec")
     public void yetiskin_sec(Integer int1) {
@@ -63,7 +63,7 @@ public class TrivagoStepDefinitions {
     }
     @Then("gelen sonuclarda Guest rating uzerine gel ve {string} u sec")
     public void gelen_sonuclarda_guest_rating_uzerine_gel_ve_u_sec(String string) {
-
+      action.clickAndHold(trivagoPage.guessRating).sendKeys(Keys.TAB).sendKeys(Keys.ENTER).perform();
     }
     @Then("more filters uzerinde gel, hotel classta {int} ve {int} yildizi sec populer filters tan Beach sec")
     public void more_filters_uzerinde_gel_hotel_classta_ve_yildizi_sec_populer_filters_tan_beach_sec(Integer int1, Integer int2) {
