@@ -19,7 +19,32 @@ public class HerOkuApp {
 
     @FindBy (xpath = "//div[@id=\"elements\"]//button")
     public List<WebElement> deletElementsButtonList;
-    @FindBy
-    public WebElement addElementButton3;
+
+    @FindBy(xpath = "//div[@id=\"column-a\"]")
+    public WebElement dragSource;
+
+    @FindBy(xpath = "//div[@id=\"column-b\"]")
+     public WebElement dragTarget;
+    @FindBy(xpath = "//*[@id=\"content\"]/ul/li/a")
+    public List<WebElement> takeElement;
+    @FindBy(xpath = "//*[@id=\"column-b\"]/header")
+    public WebElement headerAfterDragAndDrop;
+    @FindBy(linkText = "Elemental Selenium")
+    public WebElement elementalSelenium;
+    @FindBy(xpath = "//a[@href=\"https://saucelabs.com/\"]")
+    public WebElement sauceLab;
+    @FindBy(xpath = "(//a[@href=\"/training-support\"])[2]")
+    public WebElement contactSupport;
+    @FindBy(xpath = "(//div[@data-hover-content=\"Contact\"])[2]")
+    public WebElement contact;
+    public WebElement choiceYourElement(List<WebElement>takeElement,String str){
+        WebElement element=null;
+        for (WebElement w:takeElement) {
+            if(w.getText().equalsIgnoreCase(str)){
+                element=w;
+            }
+        }
+        return element;
+    }
 
 }

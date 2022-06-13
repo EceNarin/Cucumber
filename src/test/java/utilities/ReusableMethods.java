@@ -65,10 +65,16 @@ public class ReusableMethods {
             }
             Driver.getDriver().switchTo().window(origin);
         }
-        public static void switchToWindowEce(String firstPageHandle){
+        public static String switchToWindowEce(String firstPageHandle){
             Set<String> handles= Driver.getDriver().getWindowHandles();
-            String other= handles.stream().filter(t->!t.equals(firstPageHandle)).findAny().get();
-            Driver.getDriver().switchTo().window(other);
+            String other= "";  // handles.stream().filter(t->!t.equals(firstPageHandle)).findAny().get();
+            for (String w:handles) {
+                if(!(w.equals(firstPageHandle))){
+                    other=w;
+                }
+            }
+           // Driver.getDriver().switchTo().window(other);
+              return other;
         }
         //========Hover Over=====//
         public static void hover(WebElement element) {

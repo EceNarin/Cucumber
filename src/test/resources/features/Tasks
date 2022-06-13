@@ -1,3 +1,27 @@
+1. https://www.trivago.com/ adresine git
+2. Tepe menüdeki Flights linkine tıkla. Kendisi yeni sekmede açılacak. Oraya gidecek.
+3. Sayfayı en aşağı kaydır. Sonra tekrar en yukarı kaydır. (Göz attık.)
+4. Ana sayfaya (açık olan önceki sekmeye) dön.
+5. All stays - Hotel - House / Apartment sekmelerinden Hotel sekmesine tıkla.
+6. Arama kutusuna Seychelles yaz.
+7. 2022 yazı için 2 haftalık bir tarih aralığı seç.
+8. 2 yetişkin seç.
+9. Search'e tıkla.
+10. Gelen sonuçlarda Guest rating üzerine gel ve Very good'u seç.
+11. More filters üzerine gel, Hotel class'ta 4 ve 5 yıldızı seç, popular filters'tan Beach seç.
+12. En üstteki sonucun resmi üzerine gel. More photos linkinin göründüğünü doğrula. Linke tıkla.
+13. Resimlerin altta göründüğünü doğrula.
+14. En üstteki sonucun adının ve yıldızlarının altında konumu yazıyor, tıkla.
+15. Sağ taraftaki haritada otel işaretlenecek. Haritayı locate et.
+16. Hoteli haritada drag & drop yaparak ortala, + tuşuyla zoom yap.
+
+
+
+
+
+
+
+
 1) Yeni bir class olusturalim D34_readExcel
 2) Baskentler excelini framework’e ekleyelim ve excelle ilgili islemleri yaparak
 dosyayi kullanilabilir hale getirelim
