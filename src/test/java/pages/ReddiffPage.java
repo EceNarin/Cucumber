@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -25,20 +26,29 @@ public class ReddiffPage {
     public List<WebElement> altMenu;
     @FindBy(xpath = "//h1[@class=\"hdlinetitle businesscolor\"]")
     public WebElement technoTitle;
+    @FindBy(xpath = "//div[@class=\"cell topicons\"]//a")
+    public List <WebElement> headMenu;
+    @FindBy (xpath = "//div[@id=\"sensTab2\"]")
+    public WebElement NSETab;
     @FindBy
-    public WebElement ç;
-    @FindBy
-    public WebElement v;
-    @FindBy
-    public WebElement m;
-    @FindBy
-    public WebElement h;
-    @FindBy
-    public WebElement i;
+    public WebElement gainers;
+    @FindBy(xpath = "//div[@class=\"div_secto_tabs\"]//a//h5")
+    public List<WebElement> sectoralIndiciesValue;
+
+    //div[@class="div_secto_tabs"]//a//div/h5
+    @FindBy(xpath = "//*[@id=\"wrapper\"]/div[10]/div[4]/a//b")
+    public List<WebElement> sectoralIndicies;
+
     @FindBy
     public WebElement ğ;
     @FindBy
     public WebElement j;
+
+    public WebElement gainersFind(int int1){
+        gainers=Driver.getDriver().findElement(By.xpath("//*[@id=\"nseGainerDiv\"]/div["+int1+"]/div[3]"));
+        return gainers;
+
+    }
 
 
 public WebElement choiceHomeMenu(List<WebElement>list ,String str){
